@@ -67,9 +67,8 @@ class LengthOfLongestSubstring {
         int rk = -1, ans = 1, size = s.length();
 
         for (int i = 0; i < size; i++) {
-            char ch = s.charAt(i);
             if (i != 0) {
-                set.remove(ch);
+                set.remove(s.charAt(i - 1));
             }
             while (rk + 1 < size && !set.contains(s.charAt(rk + 1))) {
                 set.add(s.charAt(rk + 1));
